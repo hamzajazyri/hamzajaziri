@@ -1,0 +1,65 @@
+.contributions-section {
+  color: var(--text-color);
+  .section-title {
+    font-size: 16px;
+    &::after{
+      display: none;
+    }
+    margin-top: 50px;
+  }
+  .contribution-item {
+    padding: 10px;
+    background: var(--text-color-primary-dark);
+    margin: 10px 0px;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 15px;
+
+      img {
+        margin-right: 10px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .body {
+      // display: flex;
+      // justify-content: space-between;
+      padding: 10px 0px;
+      // align-items: flex-end;
+      h4 {
+        font-size: 15px;
+      font-weight: 400;
+      }
+    }
+
+    .footer {
+      text-align: right;
+
+      a {
+
+        color: var(--text-color-primary);
+        font-size: var(--font-size-sm);
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.contribution-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  @media (max-width: 970px) {
+    display: block;
+  }
+}

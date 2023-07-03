@@ -1,0 +1,33 @@
+<div class="project-card" [ngClass]="{'reverse': isReverse}">
+  <div class="name-sm">
+    <h3 class="project-title">{{project.name}}</h3>
+    <h3 class="sub-title">{{project.subName}}</h3>
+  </div>
+  <div class="project-image">
+    <img [src]="project.previewImageUrl" class="project-image-preview" alt="project-image" />
+  </div>
+  <div class="project-detail">
+    <div class="name-xl">
+      <h3 class="project-title">{{project.name}}</h3>
+      <h3 class="sub-title">{{project.subName}}</h3>
+    </div>
+    <div class="project-description">
+      <p [innerHTML]="project.description"></p>
+    </div>
+    <div class="project-tools">
+      <!-- <img src="assets/icons/angular-icon.svg" class="tool-icon" alt="angular"/> -->
+      <ul>
+        <li *ngFor="let tool of project.tools">{{tool}}</li>
+      </ul>
+    </div>
+    <div class="project-action">
+      <button class="btn-primary" (click)="openProjectDetails()">Read more</button>
+    </div>
+  </div>
+</div>
+
+<div class="project-comp" *ngIf="isProjectOpened">
+  <app-project-detail [name]="project.name" [subName]="project.subName" [tools]="project.tools"
+    [description]="project.description" [feedback]="project.feedback" [projectFeatures]="project.projectFeatures"
+    [gridImages]="project.gridImageUrls" (onClose)="closeProjectDetails()"></app-project-detail>
+</div>

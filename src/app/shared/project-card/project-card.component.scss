@@ -1,0 +1,146 @@
+.project-card {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  position: relative;
+  align-items: center;
+
+  @media (max-width: 970px) {
+    display: block;
+  }
+
+  .project-image {
+    grid-column: 2 / 8;
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
+
+    .project-image-preview {
+      max-width: 100%;
+      // mix-blend-mode: multiply;
+      // filter: grayscale(100%) contrast(1) brightness(90%);
+      border-radius: 20px;
+
+      &:hover {
+        filter: none;
+      }
+    }
+
+    @media (max-width: 970px) {
+      .project-image-preview {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .name-sm,
+  .name-xl {
+    .project-title {
+      font-size: var(--font-size-md);
+      color: var(--text-color);
+      line-height: 30px;
+    }
+
+    .sub-title {
+      color: var(--text-color-soft);
+      font-size: var(--font-size-sm);
+    }
+
+    &.name-sm {
+      margin: 10px;
+      display: none;
+    }
+
+    @media (max-width: 970px) {
+      &.name-sm {
+        display: block;
+      }
+
+      &.name-xl {
+        display: none;
+      }
+    }
+  }
+
+  .project-detail {
+    grid-column: 6 / -2;
+    grid-row: 1;
+    text-align: right;
+    z-index: 2;
+
+    @media (max-width: 970px) {
+      text-align: left;
+    }
+    .project-tools {
+      margin-top: 10px;
+      display: block;
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        li {
+          white-space: nowrap;
+          font-size: 11px;
+          margin: 7px;
+          padding: 5px 12px;
+          background: var(--text-color-primary-dark);
+          border-radius: 3px;
+          color: var(--text-color);
+        }
+      }
+    }
+
+    .project-description {
+      background: var(--text-color-primary-dark);
+      color: var(--text-color-soft);
+      font-size: 15px;
+      padding: 10px;
+      border-radius: 20px;
+      margin: 10px 0px;
+      backdrop-filter: blur(1px);
+      line-height: 20px;
+
+      p {
+        margin: 10px 0px;
+      }
+    }
+
+    .project-action {
+      margin-top: 10px;
+      display: block;
+    }
+  }
+
+  &.reverse {
+    .project-image {
+      grid-column: 6 / -2;
+    }
+
+    .project-detail {
+      grid-column: 2 / 8;
+      text-align: left;
+
+      .project-tools ul {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+
+.project-comp {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  background: var(--bg-color);
+  padding: 20px;
+  backdrop-filter: blur(1px);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}

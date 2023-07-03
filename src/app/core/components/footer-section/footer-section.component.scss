@@ -1,0 +1,13 @@
+footer {
+  background: linear-gradient(180deg, transparent, #00000092);
+  color: var(--text-color);
+  text-align: center;
+  padding:70px;
+  font-size: var(--font-size-sm);
+  p {
+    transform: translate(0px, 50px);
+  }
+  a {
+    color: var(--text-color-primary);
+  }
+}

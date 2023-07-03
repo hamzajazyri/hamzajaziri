@@ -1,0 +1,15 @@
+<div class="feedback-card" [ngClass]="{'full-with': fullWith}">
+  <div class="client-detail">
+    <div class="client-info">
+      <span class="client-name">{{feedback.clientName}}</span>
+      <div class="client-company">{{feedback.companyName}}</div>
+    </div>
+  </div>
+
+  <p class="client-feedback">
+    {{fullWith ? feedback.feedback : feedback.feedback.substring(0, 90)+' ...'}}
+  </p>
+  <div class="rate-star">
+    <app-rate-star></app-rate-star>
+  </div>
+</div>

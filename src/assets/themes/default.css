@@ -1,0 +1,28 @@
+:root {
+  --bg-color: #0A192F;
+
+  --font-family: 'Inter', sans-serif;
+  --font-family-secondary: 'Fira Code', monospace;
+
+  --text-color: #fff;
+  --text-color-soft: #CCD6F6;
+  --text-color-primary: #64FFDA;
+  --text-color-primary-soft: #8892B0;
+  --text-color-primary-dark: #112240;
+
+
+  --font-size-sm: 14px;
+  --font-size-md: 17px;
+  --font-size-lg: 30px;
+  --font-size-xl: 55px;
+
+  --font-weight-sm: 400;
+  --font-weight-md: 400;
+  --font-weight-lg: 400;
+  --font-weight-xl: 400;
+
+
+
+  --header-height: 70px;
+
+}
